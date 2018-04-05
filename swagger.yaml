@@ -1,0 +1,55 @@
+swagger: '2.0'
+info:
+  title: No Rutina
+  description: Aeroman NO RUTINA API
+  version: "1.0.0"
+host: polls.apiblueprint.org #cambiar despues al server real, que seria el wls
+basePath: /norutina
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+#aeroman_no_rutina
+paths:
+ /jobcard:
+  x-sumary: Job Card Operations
+  x-description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque laoreet dui at porta. Aliquam quis auctor libero. 
+	  Curabitur fringilla, risus sit amet blandit maximus, dolor nulla hendrerit turpis, sit amet pulvinar tortor purus quis libero. 
+	  Pellentesque rutrum est eu varius euismod. Morbi in fermentum sem, non ornare libero. Morbi purus tellus, porttitor quis lobortis ut, tincidunt et augue. 
+	  Phasellus tempor sagittis quam in aliquet. Vivamus ut dapibus nisl. Quisque ac libero non turpis lobortis malesuada. 
+	  Nullam porttitor tincidunt augue, vitae fringilla sem sagittis nec. 
+	  Cras metus mi, dignissim a purus vitae, dignissim lobortis enim. Pellentesque blandit pulvinar finibus.'
+  get:
+   description: List all avialable job card
+   operationId: findJobcard
+   parameters:
+        - name: year # el mismo de la url
+          in: query
+          description: parametro de ejemplo
+          required: true
+          type: string
+          x-example: '2018'
+        - name: otro # el mismo de la url
+          in: query
+          description: parametro de ejemplo
+          required: true
+          type: string
+          x-example: '12345678'
+   responses:
+    default:
+      description: Bad request
+    200:
+     description: Successful response
+     examples:
+      application/json:
+       response:
+        code: 0
+        description: successful
+        jobcards:
+         - id: 1234567
+           year: 2018
+         - id: 1234567
+           year: 2018
